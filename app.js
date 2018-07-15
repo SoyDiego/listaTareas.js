@@ -18,19 +18,25 @@ function agregarTarea(){
     let textoBorrar = document.createTextNode(' Borrar');
 
     //Validación si está vacio, agrega la clase is-Valid + mensajeError.
-    // Sino, la borra y agrega la nueva tarea.
     if (nombreTarea === '') {
         document.getElementById('tareaInput').className = 'form-control mb-2 is-invalid';
         let mensajeError = document.getElementById('mensajeError');
         mensajeError.className = 'form-text text-danger mb-2';
     }
     else{
+        // Sino, quita la clase is-invalid y mensajeError  y agrega la nueva tarea.
         document.getElementById('tareaInput').className = 'form-control mb-2';
         mensajeError.className = 'form-text text-danger mb-2 d-none';
+
+        //A partir de aqui empieza a CREAR todo el HTML de la TAREA que se agregará.
+        nuevoElemento.className = 'list-group-item';
         //Le indico los atributos al enlace
         enlace.setAttribute('href', '#');
         //Le indico la clase al enlace
         enlace.className = 'float-left';
+
+        //Agrego el texto/nombre de la tarea al enlace
+        enlace.appendChild(nuevaTarea);
 
         //Agrego el enlace al LI
         nuevoElemento.appendChild(enlace);
@@ -44,10 +50,7 @@ function agregarTarea(){
         icono.className = 'fas fa-trash-alt';
 
         icono.appendChild(textoBorrar);
-        //Agrego el texto/nombre de la tarea al enlace
-        enlace.appendChild(nuevaTarea);
 
-        nuevoElemento.className = 'list-group-item';
         //Agrego la nueva tarea a la lista
         lista.appendChild(nuevoElemento);
         //Al ingresar la tarea, deja el contenido del input vacio.
