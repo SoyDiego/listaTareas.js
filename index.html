@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="es">
   <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
@@ -17,6 +17,7 @@
 							<small id="mensajeError" class="form-text text-danger mb-2 d-none">Por favor, tipee una tarea</small>
 							<input type="text" class="form-control mb-2" id="tareaInput" aria-describedby="emailHelp" placeholder="Escriba la tarea...">
 							<button type="button" id="btn-agregar" class="btn btn-sm btn-primary">Agregar Tarea</button>
+							<button type="button" id="btn-editar" class="btn btn-sm btn-warning d-none">Editar Tarea</button>
 						</div>
 					</form>
 			</div>
@@ -25,9 +26,21 @@
 		<div class="row justify-content-center mt-5">
 			<div class="col-sm-12 col-md-6">
 				<ul class="list-group" id="lista">
-					<li class="list-group-item"><a class="float-left" href="#">Estudiar</a><button class="btn btn-sm btn-danger btn-borrar float-right"><i class="fas fa-trash-alt"> Borrar</i></button></li>
-					<li class="list-group-item"><a class="float-left" href="#">Terminar códigos...</a><button class="btn btn-sm btn-danger btn-borrar float-right"><i class="fas fa-trash-alt"> Borrar</i></button></li>
-					<li class="list-group-item"><a class="float-left" href="#">Continuar con freeCodeCamp</a><button class="btn btn-sm btn-danger btn-borrar float-right"><i class="fas fa-trash-alt"> Borrar</i></button></li>
+					<li class="list-group-item">
+						<p class="badge badge-secondary mr-2">05/07/2018</p>
+						<span id="1" onclick="tacharTarea(this);">Estudiar</span>
+						<button class="btn btn-sm btn-danger btn-borrar float-right"><i class="fas fa-trash-alt"></i></button>
+					</li>
+					<li class="list-group-item">
+						<p class="badge badge-secondary mr-2">10/04/2018</p>
+						<span id="2" onclick="tacharTarea(this);">Terminar códigos...</span>
+						<button class="btn btn-sm btn-danger btn-borrar float-right"><i class="fas fa-trash-alt"></i></button>
+					</li>
+					<li class="list-group-item">
+						<p class="badge badge-secondary mr-2">15/07/2018</p>
+						<span id="3" onclick="tacharTarea(this);">Continuar con freeCodeCamp</span>
+						<button class="btn btn-sm btn-danger btn-borrar float-right"><i class="fas fa-trash-alt"></i></button>
+					</li>
 				</ul>
 			</div>
 		</div>
